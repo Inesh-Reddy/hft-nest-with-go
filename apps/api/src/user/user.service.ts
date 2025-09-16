@@ -20,14 +20,12 @@ export class UserService {
   }
 
   async updateUser(id: string, input: createUserDto): Promise<string> {
-    const data = await this.user.update(id, input);
-    console.log(data);
+    await this.user.update(id, input);
     return 'updated Successfully';
   }
 
   async deleteUser(id: string): Promise<string> {
-    const result = await this.user.delete(id);
-    console.log(result);
+    await this.user.delete(id);
     return `User with id : ${id} deleted successfully`;
   }
 }

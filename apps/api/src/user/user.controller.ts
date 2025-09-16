@@ -24,7 +24,7 @@ export class UserController {
     return this.userSerive.createUser(input);
   }
 
-  @Patch('/update')
+  @Patch('/update/:id')
   updateUser(
     @Param('id') id: string,
     @Body() input: createUserDto,
@@ -32,7 +32,7 @@ export class UserController {
     return this.userSerive.updateUser(id, input);
   }
 
-  @Delete('/delete')
+  @Delete('/delete/:id')
   deleteUser(@Param('id') id: string): Promise<string> {
     return this.userSerive.deleteUser(id);
   }
